@@ -9,6 +9,7 @@ namespace Лабка_2
         {
             Console.WriteLine("Voznesenskyi Tymofii IPS-13.2 Var-5");
             Menu();
+            Console.WriteLine();
         }
 
         static void Menu()
