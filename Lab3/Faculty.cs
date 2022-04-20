@@ -10,6 +10,7 @@ namespace Lab3
         private string nameFaculty;
         private int numbCafed;
         private int numbSpec;
+        
         private int numbStudSpec;
         public string path="/Users/timofejvoznesenskij/RiderProjects/Lab3/Lab3/univer.txt";
         
