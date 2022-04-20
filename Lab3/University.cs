@@ -7,7 +7,7 @@ namespace Lab3
         private int numbFaclt;
         private int studOnFaclt;
         private int rating;
-
+        private int b, a;
         public University()
         {
             name = "";
