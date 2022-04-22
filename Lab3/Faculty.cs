@@ -61,13 +61,11 @@ namespace Lab3
         public static void WritingTxt(string path)
         {
             StreamWriter writer = new StreamWriter(path);
+            
+        }
 
-            var faculty = new Dictionary<int, Faculty>()
-            {
-                {111, new Faculty {nameFaculty = "IPS", numbCafed = 5, numbSpec = 10, numbStudSpec = 100}},
-                {112, new Faculty {nameFaculty = Console.ReadLine(), numbCafed = 18, numbSpec = 20, numbStudSpec = 120}},
-            };
-
+        public void Understandable(int numbCafed, int numbSpec,int numbStudSpec)
+        {
             
         }
     }
