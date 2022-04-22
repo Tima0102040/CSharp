@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Lab3
 {
     public class University
@@ -7,7 +11,15 @@ namespace Lab3
         private int numbFaclt;
         private int studOnFaclt;
         private int rating;
-        private int b, a;
+        public int scopus;
+        public int top200;
+        public int balzno;
+        public int firstPosition;
+        public int secondPosition;
+        public int thirdPosition;
+        
+        
+
         public University()
         {
             name = "";
@@ -44,7 +56,7 @@ namespace Lab3
             get { return numbFaclt; }
         }
 
-        public int StudOnFaclt
+       public int StudOnFaclt
         {
             set { studOnFaclt = value; }
             get { return studOnFaclt; }
@@ -55,7 +67,39 @@ namespace Lab3
             set { rating = value; }
             get { return rating; }
         }
-        
+
+        public void Scopus()
+        {
+            Random rnd = new Random();
+            firstPosition = rnd.Next(0, 200);
+            secondPosition = rnd.Next(0, 200);
+            thirdPosition = rnd.Next(0, 200);
+            scopus = firstPosition + secondPosition + thirdPosition;
+        }
+
+        public void Top200()
+        {
+            Random rnd = new Random();
+            firstPosition = rnd.Next(0, 200);
+            secondPosition = rnd.Next(0, 200);
+            thirdPosition = rnd.Next(0, 200);
+            top200 = firstPosition + secondPosition + thirdPosition;
+        }
+
+        public void BalZno()
+        {
+            Random rnd = new Random();
+            firstPosition = rnd.Next(0, 200);
+            secondPosition = rnd.Next(0, 200);
+            thirdPosition = rnd.Next(0, 200);
+            balzno = firstPosition + secondPosition + thirdPosition;
+        }
+
+        public int CountRating()
+        {
+            int ratingg = scopus + balzno + top200;
+            return ratingg;
+        }
         
     }
 }
