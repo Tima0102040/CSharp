@@ -53,10 +53,18 @@ namespace Lab3
             get { return numbStudSpec; }
         }
 
+        public int ChangingCafed(int numbCafed, int numbSpec, int numbStud, bool acredit )
+        {
+            while (numbStud / numbCafed > 150 && acredit == true)
+                numbCafed++;
+            
+            return numbCafed;
+        }
+
         public class StartupIncubator
         {
-            public int numbStart=5;
-            public int studStart=10;
+            public int numbStart;
+            public int studStart;
             public int investment;
 
             public double BestStartup(int numbStart, int numbJudge)
@@ -104,6 +112,7 @@ namespace Lab3
                 return subArr[0];
 
             }
+            
         }
     }
 }
