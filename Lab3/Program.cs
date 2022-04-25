@@ -10,7 +10,9 @@ class Program
         string path = "/Users/timofejvoznesenskij/RiderProjects/CSharp/Lab3/univer.txt";
     WritingTxt(path);
     ReadingTxT( path);
-}
+    Faculty.StartupIncubator bestStartup = new Faculty.StartupIncubator();
+    Console.WriteLine("Th best score of startup is {0}", bestStartup.BestStartup(10,5));
+    }
 
     static void ReadingTxT(string path)
     {
@@ -27,11 +29,11 @@ class Program
     
     static void WritingTxt(string path)
     {
-        StreamWriter writer = new StreamWriter(path);
+        StreamWriter writer = new StreamWriter(path, true);
         University knu = new University("Taras Shevchenko National Univercsity of Kyiv", "Volodymirska 60", 4, 500, 0);
         University lpi = new University("Lviv Polytechnic National University", "Bandery 12", 5, 430, 0);
         University naukma = new University("NaUKMA", "Universitetskya 13", 1, 200, 0);
-        
+
         knu.Scopus();
         knu.Top200();
         knu.BalZno();
@@ -49,7 +51,7 @@ class Program
         writer.WriteLine("Number of faculty: {0}", knu.NumbFaclt);
         writer.WriteLine("Number of student: {0}", knu.StudOnFaclt);
         writer.WriteLine("Rating: {0}", knu.CountRating());
-        writer.WriteLine("Financing: $ {0}", knu.Financing("Kyiv"));
+        writer.WriteLine("Financing: $ {0}", knu.Financing("Kyiv", lpi.Address));
         
         writer.WriteLine();
         writer.WriteLine("Name: {0}", lpi.Name);
@@ -57,7 +59,7 @@ class Program
         writer.WriteLine("Number of faculty: {0}", lpi.NumbFaclt);
         writer.WriteLine("Number of student: {0}", lpi.StudOnFaclt);
         writer.WriteLine("Rating: {0}", lpi.CountRating());
-        writer.WriteLine("Financing: $ {0}", lpi.Financing("Lviv"));
+        writer.WriteLine("Financing: $ {0}", lpi.Financing("Lviv", lpi.Address));
         writer.Close();
 
     }

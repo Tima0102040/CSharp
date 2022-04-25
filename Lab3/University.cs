@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Lab3
 {
-    public class University
+     public partial class University
     {
         private string name;
         private string address;
@@ -19,7 +20,6 @@ namespace Lab3
         public int firstPosition;
         public int secondPosition;
         public int thirdPosition;
-
         public int financing;
 
         public University()
@@ -99,23 +99,12 @@ namespace Lab3
 
         public int CountRating()
         {
-            int ratingg = scopus + balzno + top200;
-            return ratingg;
+            rating = scopus + balzno + top200;
+            return rating;
         }
 
-        public int Financing( string city)
-        {
-            if (rating > 150 && (city == "Kyiv" || city == "Lviv" || city == "Kharkiv"))
-                financing = 5000 * studOnFaclt;
-            
-            else if (rating < 150 && rating > 100 && (city == "Kyiv" || city == "Lviv" || city == "Kharkiv"))
-                financing = 3800 * studOnFaclt;
-            
-            else if (rating < 150)
-                 financing = 3000 * studOnFaclt;
-            
-            return financing;
-        }
         
+        
+
     }
 }

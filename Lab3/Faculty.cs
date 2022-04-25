@@ -52,21 +52,58 @@ namespace Lab3
             set { numbStudSpec = value; }
             get { return numbStudSpec; }
         }
-        
-        public static void ReadingTxt(string path)
-        {
-            StreamReader reader = new StreamReader(path);
-        }
 
-        public static void WritingTxt(string path)
+        public class StartupIncubator
         {
-            StreamWriter writer = new StreamWriter(path);
-            
-        }
+            public int numbStart=5;
+            public int studStart=10;
+            public int investment;
 
-        public void Understandable(int numbCafed, int numbSpec,int numbStudSpec)
-        {
-            
+            public double BestStartup(int numbStart, int numbJudge)
+            {
+                int i, j, n;
+                
+                double[] subArr = new double[numbStart];
+                int[,] arr = new int[numbStart, numbJudge];
+                Random rand = new Random();
+                for (i = 0; i < numbStart; i++)
+                {
+                    for (j = 0; j < numbJudge; j++)
+                    {
+                        arr[i, j] = rand.Next(0, 10);
+                    }
+                }
+
+                for (i = 0; i < numbStart; i++)
+                {
+                    for (j = 0; j < numbJudge; j++)
+                    {
+                        subArr[i] += arr[i, j];
+                    }
+                }
+             
+                for(i=0;i<numbStart;i++)
+                {
+                    subArr[i]=subArr[i]/numbStart;
+                }
+                
+             
+                for ( i = 1; i < numbStart; i++)
+                {
+                    double key = subArr[i];
+                    n = i - 1;
+                
+                    while (n>=0 && subArr[n]>key)
+                    {
+                        subArr[n+1] = subArr[n];
+                        subArr[n] = key;
+                        n--;
+                    }
+                }
+
+                return subArr[0];
+
+            }
         }
     }
 }
